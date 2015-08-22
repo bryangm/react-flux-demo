@@ -14,7 +14,7 @@
     "eol-last": 2,
     "no-unused-vars": [0, {"vars": "all", "args": "after-used"}],
     "no-underscore-dangle": 0,
-    "no-alert": 2,
+    "no-alert": 1,
     "no-lone-blocks": 2
   },
   "globals": {
