@@ -25,13 +25,12 @@ var AuthorActions = {
   },
 
   deleteAuthor: function(id) {
-    debugger;
     AuthorApi.deleteAuthor(id);
 
     Dispatcher.dispatch({
       actionType: ActionTypes.DELETE_AUTHOR,
       id: id
-    })
+    });
   }
 };
 
