@@ -7,31 +7,26 @@ var ActionTypes = require('../constants/actionTypes');
 
 var CourseActions = {
   createCourse: function(course) {
-    var author = AuthorApi.getAuthorById(course.author.id);
-    course.author.name = author.firstName + " " + author.lastName;
-
-    var newCourse = CourseApi.saveCourse(course);
+    course = CourseApi.saveCourse(course);
 
     Dispatcher.dispatch({
       actionType: ActionTypes.CREATE_COURSE,
-      course: newCourse
+      course: course
     });
   },
 
   updateCourse: function(course) {
-    var author = AuthorApi.getAuthorById(course.author.id);
-    course.author.name = author.firstName + " " + author.lastName;
-
-    var updatedCourse = CourseApi.saveCourse(course);
+    course = CourseApi.saveCourse(course);
 
     Dispatcher.dispatch({
       actionType: ActionTypes.UPDATE_COURSE,
-      course: updatedCourse
+      course: course
     });
   },
 
   deleteCourse: function(id) {
     CourseApi.deleteCourse(id);
+
     Dispatcher.dispatch({
       actionType: ActionTypes.DELETE_COURSE,
       id: id

@@ -10,7 +10,6 @@ var CourseForm = React.createClass({
     authors: React.PropTypes.object.isRequired,
     onSave: React.PropTypes.func.isRequired,
     onChange: React.PropTypes.func.isRequired,
-    onChangeAuthor: React.PropTypes.func.isRequired,
     errors: React.PropTypes.object
   },
 
@@ -33,11 +32,12 @@ var CourseForm = React.createClass({
           error={this.props.errors.watchHref} />
 
         <AuthorSelect
-          name="author.id"
+          name="author"
           label="Author"
-          authors={this.props.authors}
+          defaultOption="Select Author"
+          options={this.props.authors}
           value={this.props.course.author.id}
-          onChange={this.props.onChangeAuthor}
+          onChange={this.props.onChange}
           error={this.props.errors.author} />
 
         <Input

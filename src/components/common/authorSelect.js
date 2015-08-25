@@ -11,7 +11,7 @@ var AuthorSelect = React.createClass({
 
     var createAuthorOption = function(author) {
       return (
-        <option value={author.id} key={author.id}>{author.firstName} {author.lastName}</option>
+        <option value={author.id} key={author.id}>{author.name}</option>
       );
     };
 
@@ -25,8 +25,8 @@ var AuthorSelect = React.createClass({
             className="form-control"
             value={this.props.value}
             onChange={this.props.onChange} >
-            <option></option>
-            {this.props.authors.map(createAuthorOption, this)}
+            <option>{this.props.defaultOption}</option>
+            {this.props.options.map(createAuthorOption, this)}
           </select>
           <div className="input">{this.props.error}</div>
         </div>
